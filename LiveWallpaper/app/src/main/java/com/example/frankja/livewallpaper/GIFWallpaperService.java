@@ -63,7 +63,7 @@ public class GIFWallpaperService extends WallpaperService {
                 movie.draw(canvas, 0, 0);
                 canvas.restore();
                 holder.unlockCanvasAndPost(canvas);
-                movie.setTime((int) (System.currentTimeMillis()() % movie.duration()));
+                movie.setTime((int) (System.currentTimeMillis() % movie.duration()));
 
                 handler.removeCallbacks(drawGIF);
                 handler.postDelayed(drawGIF, frameDuration);

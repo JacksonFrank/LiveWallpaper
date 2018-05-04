@@ -29,7 +29,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="61dp"
-            android:id="@id/ic1"
+            android:id="@+id/ic1"
             android:background="@color/colorPrimary"
             android:onClick="onClick"
             android:tag="1"
