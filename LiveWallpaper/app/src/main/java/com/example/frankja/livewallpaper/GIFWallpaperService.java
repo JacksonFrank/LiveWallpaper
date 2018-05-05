@@ -13,21 +13,17 @@ import android.os.Handler;
 
 public class GIFWallpaperService extends WallpaperService {
 
-    Movie movie;
-
-
-
     @Override
     public WallpaperService.Engine onCreateEngine() {
-        try{
-            Movie movie = Movie.decodeStream(
-                    getResources().getAssets().open("daytime.gif"));
-            return new GIFWallpaperEngine(movie);
 
+        Movie movie;
+        try {
+            movie = Movie.decodeStream(getResources().getAssets().open("daytime.gif"));
         }catch(IOException e){
             Log.d("GIF", "Could not load asset");
             return null;
         }
+        return new GIFWallpaperEngine(movie);
     }
 
     private class GIFWallpaperEngine extends WallpaperService.Engine {
